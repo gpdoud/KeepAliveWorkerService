@@ -12,7 +12,6 @@ namespace TestWorkerService {
 
     public class Worker : BackgroundService {
         private readonly ILogger<Worker> _logger;
-        private Aping aping;
         readonly IConfiguration Configuration;
         List<Site> sites = new List<Site>();
 
@@ -35,10 +34,11 @@ namespace TestWorkerService {
             while(!stoppingToken.IsCancellationRequested) {
 
                 foreach(var site in sites) {
+                    var now = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                     var response = await (new Aping(site.Url, site.Tag)).Ping();
-                    _logger.LogInformation($"APing message: {response}");
+                    _logger.LogInformation($"{now} APING {response}");
                 }
-                await Task.Delay(15000, stoppingToken);
+                await Task.Delay(15*60*1000, stoppingToken);
             }
         }
 

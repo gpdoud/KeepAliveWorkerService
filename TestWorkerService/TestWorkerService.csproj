@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublistTrimmed>true</PublistTrimmed>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <TargetFramework>net5.0</TargetFramework>
+    <!-- <OutputType>Exe</OutputType> -->
+    <!-- <PublishSingleFile>true</PublishSingleFile> -->
+    <!-- <SelfContained>true</SelfContained> -->
+    <!-- <RuntimeIdentifier>linux-x64</RuntimeIdentifier> -->
+    <!-- <PublistTrimmed>true</PublistTrimmed> -->
+    <!-- <PublishReadyToRun>true</PublishReadyToRun> -->
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>dotnet-TestWorkerService-4A9839A5-5ED1-4F42-BE86-CF7A10BF6BA4</UserSecretsId>
   </PropertyGroup>
 
