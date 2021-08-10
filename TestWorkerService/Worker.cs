@@ -17,7 +17,8 @@ namespace TestWorkerService {
 
         public Worker(ILogger<Worker> logger) {
             _logger = logger;
-            Configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            var appsettingsjson = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "appsettings.json");
+            Configuration = new ConfigurationBuilder().AddJsonFile(appsettingsjson).Build();
             var sitesSection = Configuration.GetSection("Sites").GetChildren();
             foreach(var site in sitesSection) {
                 var s = new Site();
